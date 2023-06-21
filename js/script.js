@@ -173,10 +173,16 @@ createApp({
 					],
 				},
 			],
+            newMessage: {
+                date: "23:00",
+                text: "",
+                status: "sent",
+            },
 
 			activeContact: 0,
 		};
 	},
+
 
 	methods: {
 		
