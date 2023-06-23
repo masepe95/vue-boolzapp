@@ -6,6 +6,7 @@ const { createApp } = Vue;
 createApp({
 	data() {
 		return {
+			searchedChat: '',
             user: {
                 name: 'Nome Utente',
                 avatar: '_io'
@@ -183,6 +184,16 @@ createApp({
 		};
 	},
 
+	computed: {
+        filteredChat() {
+            const searched = this.searchedChat.trim().toLowerCase();
+            return this.contacts.filter(({ name }) => name.toLowerCase().includes(this.searchedChat));
+        },
+        filteredContacts() {
+            return this.filteredChat.filter(contact => contact.name);
+        }
+
+    }, 
 
 	methods: {
 		sendMessage() {
@@ -199,6 +210,7 @@ createApp({
 					status: "received",
 				});
 			}, 1000);
+
 		},
 	},
 

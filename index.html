@@ -54,13 +54,14 @@
 						class="p-2"
 						type="text"
 						placeholder="Cerca o inizia una nuova chat"
+						v-model="searchedChat"
 					/>
 				</div>
 
 				<!-- LIST CONTACTS -->
 				<ul class="list-contacts flex-grow-1 m-0 p-0">
 					<li
-						v-for="(contact, contactIndex) in contacts"
+						v-for="(contact, contactIndex) in filteredContacts"
 						@click="activeContact = contactIndex"
 						class="list-contacts--contact d-flex p-2"
 						:class="contactIndex == activeContact ? 'contact--active' : ''"
