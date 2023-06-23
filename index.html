@@ -75,7 +75,7 @@
 							<p class="my-0 mx-2">
 								{{ contact.name }}<br />
 								<span class="latest-access" v-if="contact.messages.length">
-									{{ contact.messages[ contact.messages.length - 1 ].text }}
+									{{ contact.messages[ contact.messages.length - 1 ].message }}
 								</span>
 							</p>
 						</div>
@@ -113,7 +113,7 @@
 						class="message p-2 m-2"
 						:class="message.status"
 					>
-						<p class="p-0 m-0">{{ message.text }}</p>
+						<p class="p-0 m-0">{{ message.message }}</p>
 						<small class="message-date">{{ message.date }}</small>
 					</div>
 				</div>
