@@ -6,6 +6,7 @@ const { createApp } = Vue;
 createApp({
 	data() {
 		return {
+			time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
 			searchedChat: '',
             user: {
                 name: 'Nome Utente',
@@ -204,7 +205,7 @@ createApp({
 				}
 			  ],
             newMessage: {
-                date: "23:00",
+                date: new Date().toLocaleString(),
                 message: "",
                 status: "sent",
             },
@@ -236,7 +237,7 @@ createApp({
 
 			setTimeout(() => {
 				this.contacts[this.activeContact].messages.push({
-					date: "23:01",
+					date: new Date().toLocaleString(),
 					message: "OK",
 					status: "received",
 				});
