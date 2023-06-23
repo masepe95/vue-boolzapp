@@ -229,8 +229,10 @@ createApp({
 			this.contacts[this.activeContact].messages.push({
 				date: this.newMessage.date,
 				message: this.newMessage.message,
-				status: this.newMessage.status,
-			});
+				status: this.newMessage.status
+			},
+			this.newMessage.message= '',
+			);
 
 			setTimeout(() => {
 				this.contacts[this.activeContact].messages.push({
