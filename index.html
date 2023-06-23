@@ -25,7 +25,7 @@
 				<header class="contacts-col--header d-flex justify-content-between p-2">
 					<div class="d-flex align-items-center">
 						<img src="./img/avatar_io.jpg" class="avatar" alt="" />
-						<p class="my-0 mx-2">User</p>
+						<p class="my-0 mx-2">{{user.name}}</p>
 					</div>
 					<div class="d-flex align-items-center icons">
 						<i class="fa-solid fa-circle-notch mx-2"></i>
@@ -96,7 +96,8 @@
 						/>
 						<p class="my-0 mx-2">
 							{{ contacts[activeContact].name }}<br />
-							<span class="latest-access">Ultimo accesso ore 12:00</span>
+							<span class="latest-access">Ultimo accesso ore 12:00
+							</span>
 						</p>
 					</div>
 					<div class="d-flex align-items-center icons">
@@ -126,7 +127,7 @@
 						<input
 							@keyUp.enter="sendMessage()"
 							type="text"
-							v-model="newMessage.text"
+							v-model="newMessage.message"
 							placeholder="Scrivi un messaggio"
 							class="send-message-input px-4 p-2"
 						/>
